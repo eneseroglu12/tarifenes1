@@ -32,7 +32,7 @@ header {
 
 /* Kategorilerin stili */
 .category-container {
-    margin: 40px 10%;
+    margin: 40px 5%;
     background-color: white;
     border-radius: 15px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
@@ -92,6 +92,8 @@ input[type="checkbox"]:checked + .category-title + .category-content {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin: 10px;
+    width: 100%; /* Öğelerin genişliği 100% olacak şekilde ayarlandı */
+    box-sizing: border-box;
 }
 
 .recipe:hover {
@@ -251,3 +253,4 @@ button:hover {
         padding: 15px;
     }
 }
+
