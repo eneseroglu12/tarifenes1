@@ -229,7 +229,7 @@ button:hover {
 /* 480px ve altındaki ekranlar için daha fazla uyum */
 @media only screen and (max-width: 480px) {
     .subcategory {
-        grid-template-columns: 1fr; /* 1 öğe bir satırda */
+        grid-template-columns: repeat(1, 1fr); /* 1 öğe bir satırda */
     }
 
     .recipe {
@@ -253,4 +253,3 @@ button:hover {
         padding: 15px;
     }
 }
-
