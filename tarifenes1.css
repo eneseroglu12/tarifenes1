@@ -5,6 +5,7 @@ body {
     padding: 0;
     background-color: #f4f4f9;
     color: #333;
+    box-sizing: border-box;
 }
 
 /* Logo ve başlık */
@@ -79,6 +80,7 @@ input[type="checkbox"]:checked + .category-title + .category-content {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 öğe bir satırda */
     gap: 20px;
+    padding: 10px;
 }
 
 /* 3 öğe bir satıra düşecek şekilde yemek kutuları */
@@ -182,18 +184,6 @@ button:hover {
 
 /* 1024px ve altındaki ekranlar için stil değişiklikleri */
 @media only screen and (max-width: 1024px) {
-    /* Kategorilerin genişliğini değiştirebiliriz */
-    .category-container {
-        margin: 40px 5%;
-        padding: 20px;
-    }
-
-    .category-title {
-        font-size: 24px;
-        margin-bottom: 15px;
-    }
-
-    /* 1024px ve altındaki ekranlar için her satırda 3 öğe */
     .subcategory {
         grid-template-columns: repeat(3, 1fr); /* 3 öğe bir satırda */
     }
@@ -203,9 +193,19 @@ button:hover {
         margin: 10px auto;
     }
 
-    /* Resim boyutunu da mobil uyumlu yapıyoruz */
     .recipe img.recipe-image {
         height: 120px;
+    }
+
+    /* Kategori başlığı yazı boyutunu küçültüyoruz */
+    .category-title {
+        font-size: 24px;
+    }
+
+    /* Kategori kutu genişliğini %100 yapıyoruz */
+    .category-container {
+        margin: 40px 5%;
+        padding: 20px;
     }
 }
 
@@ -226,9 +226,8 @@ button:hover {
 
 /* 480px ve altındaki ekranlar için daha fazla uyum */
 @media only screen and (max-width: 480px) {
-    /* Başlık ve kategori font boyutlarını daha da küçültüyoruz */
-    .category-title {
-        font-size: 20px;
+    .subcategory {
+        grid-template-columns: 1fr; /* 1 öğe bir satırda */
     }
 
     .recipe {
@@ -241,7 +240,14 @@ button:hover {
         height: 80px;
     }
 
-    .subcategory {
-        grid-template-columns: 1fr; /* 1 öğe bir satırda */
+    /* Kategori başlığı yazı boyutunu küçültüyoruz */
+    .category-title {
+        font-size: 20px;
+    }
+
+    /* Kategori kutu genişliğini %100 yapıyoruz */
+    .category-container {
+        margin: 20px 5%;
+        padding: 15px;
     }
 }
