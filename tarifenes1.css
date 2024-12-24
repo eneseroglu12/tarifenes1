@@ -180,8 +180,8 @@ button:hover {
     opacity: 1;
 }
 
-/* 768px ve altındaki ekranlar için stil değişiklikleri */
-@media only screen and (max-width: 768px) {
+/* 1024px ve altındaki ekranlar için stil değişiklikleri */
+@media only screen and (max-width: 1024px) {
     /* Kategorilerin genişliğini değiştirebiliriz */
     .category-container {
         margin: 40px 5%;
@@ -193,7 +193,11 @@ button:hover {
         margin-bottom: 15px;
     }
 
-    /* 768px ve altındaki ekranlar için her satırda 3 öğe */
+    /* 1024px ve altındaki ekranlar için her satırda 3 öğe */
+    .subcategory {
+        grid-template-columns: repeat(3, 1fr); /* 3 öğe bir satırda */
+    }
+
     .recipe {
         width: 100%; /* 3 öğe olacak şekilde genişlik */
         margin: 10px auto;
@@ -203,11 +207,20 @@ button:hover {
     .recipe img.recipe-image {
         height: 120px;
     }
+}
 
-    /* Subcategory flex yönünü dikey yapıyoruz */
+/* 768px ve altındaki ekranlar için stil değişiklikleri */
+@media only screen and (max-width: 768px) {
     .subcategory {
-        flex-direction: column;
-        align-items: center;
+        grid-template-columns: repeat(2, 1fr); /* 2 öğe bir satırda */
+    }
+
+    .recipe {
+        padding: 15px;
+    }
+
+    .recipe img.recipe-image {
+        height: 100px;
     }
 }
 
@@ -225,6 +238,10 @@ button:hover {
     }
 
     .recipe img.recipe-image {
-        height: 100px;
+        height: 80px;
+    }
+
+    .subcategory {
+        grid-template-columns: 1fr; /* 1 öğe bir satırda */
     }
 }
